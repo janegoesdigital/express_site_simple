@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddBlob(name="addactivity",method="post",action="/activities")
+        p City:
+            input#inputCity(type="text", placeholder="eg New York", name="city")
+        p Activity Name:
+            input#inputName(type="text", placeholder="eg see a Museum", name="name")
+        p Activity Description:
+            input#inputDescription(type="textarea", placeholder="tell us abut it", name="description")
+        p Activity Cost:
+            input#inputCost(type="number", placeholder="$", name="cost")
+        p Should we do it?:
+           input#inputDoIt(type="checkbox", name="doIt")
+        p Is it booked?:
+           input#inputBooked(type="checkbox", name="booked")
+        p What date?
+            input#inputDate(type="date", name="date")
+        p Completed:
+            input#inputCompleted(type="checkbox", name="completed")
+        p Tell us about your experiences
+            input#inputComments(type="textarea", name="comments")
+        p
+            button#btnSubmit(type="submit") submit

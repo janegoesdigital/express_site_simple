@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    h1.
+        Each activity item #{activity._id}
+    p City: #{activity.city}
+    p Name: #{activity.name}
+    p Description: #{activity.description}
+    p Cost: #{activity.cost}
+    p Do we want to do it?: #{activity.doIt}
+    p Booked: #{activity.booked}
+    p When: #{activity.date}
+    p Is it over?: #{activity.completed}
+    p Did we like it: #{activity.comments}

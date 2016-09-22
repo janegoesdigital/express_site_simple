@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    h1
+        Trip ID   #{activity._id}
+    form(action='/activities/#{activity._id}/edit',method='post',name='updateactivity',enctype='application/x-www-form-urlencoded')
+        p City:
+            input#inputCity(type="text", placeholder="eg New York", name="city")
+        p Activity Name:
+            input#inputName(type="text", placeholder="eg see a Museum", name="name")
+        p Activity Description:
+            input#inputDescription(type="textarea", placeholder="tell us abut it", name="description")
+        p Activity Cost:
+            input#inputCost(type="number", placeholder="$", name="cost")
+        p Should we do it?:
+           input#inputDoIt(type="checkbox", name="doIt")
+        p Is it booked?:
+           input#inputBooked(type="checkbox", name="booked")
+        p What date?
+            input#inputDate(type="date", name="date")
+        p Completed:
+            input#inputCompleted(type="checkbox", name="completed")
+        p Tell us about your experiences
+            input#inputComments(type="textarea", name="comments")
+        p
+            input(type='hidden',value='PUT',name='_method')
+        p
+            button#btnSubmit(type='submit').
+                Update

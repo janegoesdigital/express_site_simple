@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each activity, i in activities
+            li
+                = activity.city
+                = activity.name
+                = activity.description
+                = activity.cost
+                = activity.doIt
+         
+                form(action='/activities/#{activity._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                 p
+                     a(href='/activities/#{activity._id}/edit') Edit
+                 p
+                     a(href='/activities/#{activity._id}') Show
+Contact GitHub API Training Shop Blog About
